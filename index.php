@@ -13,19 +13,24 @@ $logo = 'https://loghi-famosi.com/wp-content/uploads/2020/09/Google-Logo.png';
 $page_title = 'Privacy e termini';
 $categories = [
     [
-        'title' => 'Introduzione'
+        'title' => 'Introduzione',
+        'active' => false,
     ],
     [
-        'title' => 'Norme sulla privacy'
+        'title' => 'Norme sulla privacy',
+        'active' => false,
     ],
     [
-        'title' => 'Termini di servizio'
+        'title' => 'Termini di servizio',
+        'active' => false,
     ],
     [
-        'title' => 'Tecnologie'
+        'title' => 'Tecnologie',
+        'active' => false,
     ],
     [
-        'title' => 'Domande frequenti'
+        'title' => 'Domande frequenti',
+        'active' => true,
     ],
 ];
 $q_and_a = [
@@ -93,6 +98,14 @@ $q_and_a = [
             gap: 2rem;
             border-bottom: 1px solid black;
         }
+        h2{
+            height: 40px;
+            margin: 0; 
+        }
+        .active{
+            color: blue;
+            border-bottom: 2px solid blue;
+        }
     </style>
 </head>
 <body>
@@ -109,7 +122,7 @@ $q_and_a = [
     <div class="categories d-flex">
         <?php foreach($categories as $key => $value) {?>
 
-            <h2>
+            <h2 class="<?php echo $value['active'] == true ? 'active' : 'not' ?>">
                 <?php echo $value['title'] ?>
             </h2>
 
