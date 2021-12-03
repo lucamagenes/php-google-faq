@@ -51,9 +51,15 @@ $google_db = [
         ],
 ];
 
+echo $google_db['Privacy e termini'];
+
+for ($i=0; $i < count($google_db) ; $i++) { 
+    echo $google_db[$i]['Domande frequenti'];
+    
+}
 
 
-foreach($google_db as $privacy => $categories){
+/* foreach($google_db as $privacy => $categories){
     echo '<pre>';
     echo $privacy;
     echo '</pre>';
@@ -71,14 +77,14 @@ foreach($google_db as $privacy => $categories){
         echo $q_and_a['answer1'];
         echo '</pre>';
 
-        /* foreach($q_and_a as $key => $value) {
+        foreach($q_and_a as $key => $value) {
             echo '<pre>';
             echo $value;
             echo '</pre>';
-        } */
+        }
     }
 }
-
+ */
 
 
 ?>
@@ -98,9 +104,18 @@ foreach($google_db as $privacy => $categories){
         </a>
     </div>
     <?php foreach($google_db as $privacy => $categories){ ?>
-    <h1>
+    <h1 >
         <?php echo $privacy ?>
     </h1>
+        <div class="row">
+            <?php foreach($categories as $category => $q_and_a) { ?>
+            <h2>
+                <?php echo $q_and_a; ?>
+            </h2>
+        </div>    
+            
+            <?php } ?>
+
     <?php } ?>
 
 </body>
